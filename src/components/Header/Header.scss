@@ -1,0 +1,245 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  background: var(--main-bg-color);
+  box-shadow: 0 0 25px rgba(5, 25, 25, 0.0784313725);
+  margin-bottom: vw(10px);
+  //padding: 0 var(--padding-small);
+
+  @include HD {
+    margin-bottom: vwh(10px);
+  }
+  @include Tablet {
+    margin-bottom: vwt(10px);
+  }
+  @include Mobile {
+    margin-bottom: vwm(10px);
+  }
+
+  &__content {
+    padding: vw(12px) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include HD {
+      padding: vwh(12px) 0;
+    }
+    @include Tablet {
+      padding: vwt(8px) 0;
+    }
+    @include Mobile {
+      padding: vwm(8px) 0;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: vwh(10px) 0;
+
+    @include HD {
+      padding: vwh(10px) 0;
+    }
+    @include Tablet {
+      padding: vwt(10px) 0;
+    }
+    @include Mobile {
+      padding: vwm(10px) 0;
+    }
+  }
+
+  &__logo-text {
+    position: absolute;
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: vw(20px);
+    line-height: vw(20px);
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.3s ease;
+    color: var(--btn-primaty-static);
+
+    @include HD {
+
+    }
+    @include Tablet {
+
+    }
+    @include Mobile {
+
+    }
+  }
+
+  &__logo:hover &__icon {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  &__icon {
+    transition: 0.3s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  &__logo:hover &__logo-text {
+    top: 50%;
+    opacity: 1;
+  }
+
+  &__logo-text:active {
+    color: var(--btn-primaty-press);
+  }
+
+  &__btn {
+    height: 48px;
+    font-family: Raleway;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    color: var(--main-bg-color);
+    background-color: var(--btn-primaty-static);
+
+    display: block;
+    text-align: center;
+  }
+}
+
+.btn-burger {
+  background: var(--btn-primaty-static);
+  padding: 12px;
+  border-radius: 4px;
+
+  img {
+    vertical-align: middle;
+  }
+}
+
+.menu {
+  &__nav {
+    display: none;
+    position: absolute;
+    background-color: var(--main-bg-color);
+    left: 0;
+    top: 64px;
+    height: 100vh;
+    width: 100%;
+    padding: 16px;
+    box-shadow: 0 0 25px rgba(5, 25, 25, 0.0784313725) inset;
+  }
+
+  &__link {
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--text-icon-gray-dark);
+  }
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__ul li {
+    padding: 12px 20px;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.social__links {
+  display: flex;
+  gap: 12px;
+
+  a {
+    width: 48px;
+    height: 48px;
+    background-color: var(--main-bg-color);
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 0px #0D40401A;
+  }
+
+  a:hover {
+    background-color: var(--button-social-hover);
+  }
+}
+
+
+@media(min-width: 375px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+@media(min-width: 768px) {
+  .menu__ul a {
+    max-width: 100px;
+  }
+}
+
+//@media(min-width: 1024px) {
+//  .header {
+//    padding: 0 45px;
+//  }
+//}
+
+@media(min-width: 1124px) {
+
+  .social__links {
+    display: none;
+  }
+
+  .menu {
+    &__nav {
+      display: block;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: inherit;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    &__ul {
+      flex-direction: row;
+    }
+
+    &__link:hover {
+      color: var(--btn-primaty-hover);
+    }
+  }
+  .social-burger {
+    display: none;
+  }
+
+  .btn-burger {
+    display: none;
+  }
+}
+
+//@media(min-width: 1440px) {
+//  .header {
+//    padding: 0 45px;
+//  }
+//}

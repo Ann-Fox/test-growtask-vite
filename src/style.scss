@@ -1,0 +1,196 @@
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function vw($px, $media: 1920) {
+  @return #{stripUnit($px) / stripUnit($media) * 100}vw;
+}
+
+@function vwh($px, $media: 1366) {
+  @return #{stripUnit($px) / stripUnit($media) * 100}vw;
+}
+
+@function vwt($px, $media: 768) {
+  @return #{stripUnit($px) / stripUnit($media) * 100}vw;
+}
+
+@function vwm($px, $media: 375) {
+  @return #{stripUnit($px) / stripUnit($media) * 100}vw;
+}
+
+$breakpoints: (
+        'hd': 1401px,
+        'tablet': 991px,
+        'mobile': 576px,
+);
+
+@mixin HD {
+  @media screen and (width <= map-get($breakpoints, 'hd')) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media screen and (width <= map-get($breakpoints, 'tablet')) {
+    @content;
+  }
+}
+
+@mixin Mobile {
+  @media screen and (width <= map-get($breakpoints, 'mobile')) {
+    @content;
+  }
+}
+
+.wrapper {
+  margin: 0 vw(250px);
+
+  @include HD {
+    margin: 0 vwh(45px);
+  }
+  @include Tablet {
+    margin: 0 vwt(16px);
+  }
+  @include Mobile {
+    margin: 0 vwm(16px);
+
+  }
+}
+
+@import "components/Header/Header.scss";
+@import "components/FirstScreen/FirstScreen.scss";
+@import "components/AboutUs/AboutUs.scss";
+@import "components/Slider/Slider.scss";
+@import "components/Presentation/Presentation.scss";
+@import "components/FAQ/FAQ.scss";
+@import "components/Footer/Footer.scss";
+@import "reset.scss";
+
+/* Подключение шрифтов */
+@font-face {
+  font-family: "Gogh";
+  src: url("../assets/fonts/Gogh-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/fonts/Raleway-Regular.woff2") format("woff2");
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 64px;
+}
+
+body,
+header {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h4 {
+  font-family: Gogh;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 32px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: var(--text-icon-color1);
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 28px;
+  text-align: left;
+}
+
+h2 span {
+  color: var(--btn-primaty-static);
+}
+
+p {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: var(--text-icon-gray-dark);
+}
+
+h4 {
+  font-size: 19px;
+  line-height: 20px;
+  text-align: left;
+}
+
+h4 span {
+  color: var(--btn-primaty-static);
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+/* Переменные */
+:root {
+  --main-bg-color: #FFFFFF;
+  --main-black: #030D0D;
+  --padding-small: 16px;
+  --btn-primaty-static: #14CCCC;
+
+  --text-icon-color1: #11A6A6;
+  --text-icon-color1-main: #14CCCC;
+
+  --main-gray-lighter: #E1FAFA;
+  --text-icon-color1-light: #17E5E5;
+  --text-icon-gray-dark: #3D4040;
+
+  --btn-primaty-hover: #17e6e6;
+  --btn-primaty-press: #11a6a6;
+  --input-static: #DAF2F2;
+  --input-error: #FF6666;
+  --button-social-hover: #E1FAFA;
+}
+
+.bg {
+  background-color: var(--main-gray-lighter);
+}
+
+main {
+  margin: 78px 0 0;
+}
+.padding-main {
+  padding: 0 16px;
+}
+
+.container {
+  min-width: 288px;
+  margin: 0 auto;
+}
+
+@media(min-width: 1024px) {
+  .container {
+    max-width: 1276px;
+  }
+
+  .padding-main {
+    padding: 0 45px;
+  }}
+
+@media(min-width: 1440px) {
+  .container {
+    max-width: 1420px;
+  }
+}
