@@ -123,3 +123,33 @@
   }
 }
 
+@mixin br-8 {
+  border-radius: vw(8px);
+
+  @include HD {
+    border-radius: vwh(8px);
+  }
+  @include Tablet {
+    border-radius: vwt(8px);
+  }
+  @include Mobile {
+    border-radius: vwm(8px);
+  }
+}
+
+@mixin g-20-16 {
+  gap: vw(20px);
+
+  @include HD {
+    gap: vwh(20px);
+
+  }
+  @include Tablet {
+    gap: vwt(16px);
+
+  }
+  @include Mobile {
+    gap: vwm(16px);
+  }
+}
+
