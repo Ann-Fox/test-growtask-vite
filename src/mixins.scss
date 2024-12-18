@@ -19,3 +19,107 @@
   @include t1;
   font-weight: 700;
 }
+
+@mixin t2 {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: vw(16px);
+
+  @include HD {
+    font-size: vwh(16px);
+  }
+  @include Tablet {
+    font-size: vwt(16px);
+  }
+  @include Mobile {
+    font-size: vwm(16px);
+  }
+}
+
+@mixin t2-b {
+  @include t2;
+  font-weight: 700;
+}
+@mixin t3 {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: vw(14px);
+
+  @include HD {
+    font-size: vwh(14px);
+  }
+  @include Tablet {
+    font-size: vwt(14px);
+  }
+  @include Mobile {
+    font-size: vwm(14px);
+  }
+}
+
+@mixin t3-b {
+  @include t3;
+  font-weight: 700;
+}
+
+@mixin h1 {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  font-size: vw(56px);
+
+  @include HD {
+    font-size: vwh(56px);
+  }
+  @include Tablet {
+    font-size: vwt(32px);
+  }
+  @include Mobile {
+    font-size: vwm(32px);
+  }
+}
+
+@mixin h1-b {
+  @include h1;
+  font-weight: 700;
+}
+
+@mixin h4 {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  font-size: vw(20px);
+
+  @include HD {
+    font-size: vwh(20px);
+  }
+  @include Tablet {
+    font-size: vwt(20px);
+  }
+  @include Mobile {
+    font-size: vwm(20px);
+  }
+}
+
+@mixin h4-b {
+  @include h4;
+  font-weight: 800;
+}
+
+
+//border-radius
+@mixin br-4 {
+  border-radius: vw(4px);
+
+  @include HD {
+    border-radius: vwh(4px);
+  }
+  @include Tablet {
+    border-radius: vwt(4px);
+  }
+  @include Mobile {
+    border-radius: vwm(4px);
+  }
+}
+

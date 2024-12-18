@@ -183,7 +183,7 @@ input:user-invalid {
     &__bg {
       background-image: url('assets/images/footer/footer-main-desctop.svg');
       width: 100%;
-      max-width: 1276px;
+      //max-width: 1276px;
       padding: 60px;
       margin: 0 auto;
     }
@@ -215,6 +215,6 @@ input:user-invalid {
 @media(min-width: 1440px) {
   .footer__bg {
     background-image: url('assets/images/footer/footer-main-full.svg');
-    max-width: 1420px;
+    //max-width: 1420px;
   }
 }
