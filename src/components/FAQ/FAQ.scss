@@ -1,27 +1,52 @@
 .faq {
   &__container {
-    padding: 40px 0 80px;
+    padding: vw(120px) 0;
+
+    @include Tablet {
+      padding: vwt(40px) 0 80px;
+    }
   }
 
   &__container h2 {
-    margin-bottom: 40px;
+    margin-bottom: vw(60px);
+
+    @include Tablet {
+      margin-bottom: vwt(40px);
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: vw(20px);
+
+    @include Tablet {
+      gap: vwt(16px);
+    }
+
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 12px;
+    padding: vw(12px);
     box-sizing: border-box;
-    border-radius: 8px;
+
     cursor: pointer;
     background: var(--main-gray-lighter);
+
+    @include br-8;
+
+    @include HD {
+      padding: vwh(12px);
+    }
+    @include Tablet {
+      padding: vwt(12px);
+    }
+    @include Mobile {
+      padding: vwm(12px);
+    }
   }
 
   &__item:hover h3 {
@@ -40,15 +65,34 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 4px;
-    padding: 12px;
-    width: 48px;
-    height: 48px;
+
     background: var(--btn-primaty-static);
     border: none;
     box-sizing: border-box;
     cursor: pointer;
     transition: 0.1s ease;
+
+    padding: vw(12px);
+    width: vw(48px);
+    height: vw(48px);
+
+    @include br-4;
+
+    @include HD {
+      padding: vwh(12px);
+      width: vwh(48px);
+      height: vwh(48px);
+    }
+    @include Tablet {
+      padding: vwt(12px);
+      width: vwt(48px);
+      height: vwt(48px);
+    }
+    @include Mobile {
+      padding: vwm(12px);
+      width: vwm(48px);
+      height: vwm(48px);
+    }
   }
 
   &__btn:hover {
@@ -69,12 +113,21 @@
 
 .wrapper__title-faq {
   font-family: Raleway;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 150%;
   color: var(--text-icon-gray-dark);
-  margin: 0 auto 0 12px;
+  margin: 0 auto 0 vw(12px);
   transition: 0.1s ease;
+
+  @include t2-b;
+
+  @include HD {
+    margin: 0 auto 0 vwh(12px);
+  }
+  @include Tablet {
+    margin: 0 auto 0 vwt(12px);
+  }
+  @include Mobile {
+    margin: 0 auto 0 vwm(12px);
+  }
 }
 
 .rotate {
@@ -82,18 +135,27 @@
 }
 
 .answer {
-    display: none;
-  }
+  display: none;
+}
 
 .answer__active {
   display: block;
   color: var(--text-icon-gray-dark);
-  margin: 0 auto 0 12px;
-  padding: 10px 10px 10px 0;
-}
 
-@media(min-width: 1280px) {
-  .faq {
-    padding: 120px 0;
+  margin: 0 auto 0 vw(12px);
+  padding: vw(10px) vw(10px) vw(10px) 0;
+
+  @include t2;
+  @include HD {
+    margin: 0 auto 0 vwh(12px);
+    padding: vwh(10px) vwh(10px) vwh(10px) 0;
+  }
+  @include Tablet {
+    margin: 0 auto 0 vwt(12px);
+    padding: vwt(10px) vwt(10px) vwt(10px) 0;
+  }
+  @include Mobile {
+    margin: 0 auto 0 vwm(12px);
+    padding: vwm(10px) vwm(10px) vwm(10px) 0;
   }
 }
