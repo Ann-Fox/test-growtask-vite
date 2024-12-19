@@ -22,6 +22,7 @@ new Swiper(".mySwiper", {
     },
     mousewheel: true,
     keyboard: true,
+    // breakpoints: {}
 });
 
 // Presentation image
