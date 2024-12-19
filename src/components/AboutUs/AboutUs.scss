@@ -54,7 +54,6 @@
       }
       @include Mobile {
         max-width: 100%;
-
       }
     }
   }
@@ -142,12 +141,19 @@
 
     img {
       border-radius: vw(8px);
+      max-width: vw(700px);
 
+      @include HD {
+        border-radius: vwh(4px);
+        max-width: vwh(628px);
+      }
       @include Tablet {
         object-fit: cover;
+        max-width: vwt(280px);
       }
       @include Mobile {
         border-radius: vwm(8px);
+        max-width: vwm(280px);
       }
     }
   }
