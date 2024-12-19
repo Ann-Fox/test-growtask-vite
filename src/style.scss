@@ -56,6 +56,21 @@ $breakpoints: (
 
   }
 }
+
+.wrapper__footer {
+  margin: 0 vw(250px);
+
+  @include HD {
+    margin: 0 vwh(45px);
+  }
+  @include Tablet {
+    margin: 0;
+  }
+  @include Mobile {
+    margin: 0;
+
+  }
+}
 @import "mixins.scss";
 @import "components/Header/Header.scss";
 @import "components/FirstScreen/FirstScreen.scss";
