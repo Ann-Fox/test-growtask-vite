@@ -3,15 +3,15 @@
 
   padding: vw(160px) 0;
 
- @include HD {
-   padding: vwh(160px) 0;
- }
- @include Tablet {
-   padding: vwt(80px) 0;
- }
- @include Mobile {
-   padding: vwm(80px) 0;
- }
+  @include HD {
+    padding: vwh(160px) 0;
+  }
+  @include Tablet {
+    padding: vwt(80px) 0;
+  }
+  @include Mobile {
+    padding: vwm(80px) 0;
+  }
 
   &__bg {
     background-image: url('assets/images/footer/footer-main-full.svg');
@@ -26,8 +26,8 @@
     background-size: cover;
     padding: vw(60px);
 
-    //border-radius: 8px;
-@include br-8;
+
+    @include br-8;
 
     @include HD {
       background-image: url('assets/images/footer/footer-main-desctop.svg');
@@ -42,10 +42,6 @@
       width: 100%;
 
       padding: vwt(40px) vwt(16px);
-
-      //max-width: 1276px;
-      //padding: 60px;
-      //margin: 0 auto;
     }
     @include Mobile {
       background-image: url('assets/images/footer/footer-main.svg');
@@ -55,14 +51,42 @@
 
   &__form {
     background-color: #fff;
-    padding: 20px 16px;
-    border-radius: 8px;
+    //max-height: 264px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: vw(40px);
+
+    @include br-8;
+    @include HD {
+      padding: vwh(40px);
+    }
+    @include Tablet {
+      padding: vwt(40px);
+    }
+    @include Mobile {
+      padding: vwm(20px) vwm(16px);
+    }
+
   }
 
   &__head h2 {
-    margin-bottom: 20px;
-  }
+    margin-bottom: vw(24px);
 
+    @include h2;
+    @include HD {
+      margin-bottom: vwh(24px);
+    }
+    @include Tablet {
+      margin-bottom: vwt(20px);
+
+    }
+    @include Mobile {
+      margin-bottom: vwm(20px);
+    }
+  }
+  &__head p {
+    @include t2;
+  }
   &__head p,
   &__head h2,
   &__social h4 {
@@ -72,41 +96,147 @@
   &__social {
     display: flex;
     flex-direction: column;
-    height: 100px;
+    height: vw(100px);
     justify-content: space-between;
+    //gap:12px;
+    @include HD {
+      height: vwh(100px);
+    }
+    @include Tablet {
+      height: vwt(100px);
+    }
+    @include Mobile {
+      height: vwm(100px);
+    }
+
+    h4 {
+      @include h4-b;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+
+    gap: vw(12px);
+
+    @include HD {
+      gap: vwh(12px);
+    }
+    @include Tablet {
+      gap: vwt(12px);
+    }
+    @include Mobile {
+      gap: vwm(12px);
+      justify-content: center;
+    }
   }
 }
+//правильно будет сделать через тег <svg></svg> и менять размер в vw
+a > img {
+  width: vw(24px);
+  height: vw(21px);
 
-.social__links {
-  justify-content: center;
+  @include HD {
+    width: vwh(24px);
+    height: vwh(21px);
+  }
+  @include Tablet {
+    width: vwt(24px);
+    height: vwt(21px);
+  }
+  @include Mobile {
+    width: vwm(24px);
+    height: vwm(21px);
+  }
 }
 
 .form {
   &__inputs {
     display: grid;
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+
+    gap: vw(20px);
+    @include HD {
+      gap: vwh(20px);
+    }
+    @include Tablet {
+      gap: vwt(12px);
+    }
+    @include Mobile {
+      grid-template-columns: 1fr;
+
+      gap: vwm(12px);
+    }
+
   }
 
   &__inputs input {
-    border: 2px solid var(--input-static);
-    border-radius: 4px;
-    padding: 12px 16px;
+    border: vw(2px) solid var(--input-static);
+    padding: vw(12px) vw(16px);
     width: 100%;
-    height: 48px;
+    //height: 48px;
     box-sizing: border-box;
 
     font-family: Raleway;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     color: var(--text-icon-gray-dark);
+
+    @include br-4;
+    @include t2-b;
+
+    @include HD {
+      border-width: vwh(2px);
+      padding: vwh(12px) vwh(16px);
+
+    }
+    @include Tablet {
+      border-width: vwt(2px);
+
+      padding: vwt(12px) vwt(16px);
+    }
+    @include Mobile {
+      border-width: vwm(2px);
+
+      padding: vwm(12px) vwm(16px);
+
+    }
+  }
+
+  &__inputs input:focus {
+    border-color: var(--input-primary-focus-writing);
+  }
+
+  &__inputs input:hover {
+    border-color: var(--input-primary-hover);
+  }
+
+  &__inputs input:active {
+    border-color: var(--input-primary-static-active);
   }
 
   &__btns {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 20px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+gap: vw(20px);
+    margin-top: vw(20px);
+
+    @include HD {
+      gap: vwh(20px);
+      margin-top: vwh(20px);
+
+    }
+    @include Tablet {
+      gap: vwt(16px);
+      margin-top: vwt(20px);
+
+    }
+    @include Mobile {
+      flex-direction: column;
+      gap: vwm(16px);
+      margin-top: vwm(20px);
+
+    }
   }
 
   &__checkbox {
@@ -115,14 +245,26 @@
 
   &__btns button {
     background-color: var(--btn-primaty-static);
-    height: 48px;
     color: var(--main-bg-color);
-    border-radius: 4px;
 
+    padding: vw(13.5px) vw(20px);
     font-family: Raleway;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 21px;
+
+    @include br-4;
+    @include t3-b;
+    @include HD {
+      padding: vwh(13.5px) vwh(20px);
+
+    }
+    @include Tablet {
+      padding: vwt(13.5px) vwt(20px);
+
+    }
+    @include Mobile {
+      width: 100%;
+      padding: vwm(13.5px) vwm(20px);
+
+    }
   }
 
   &__btns button:hover {
@@ -135,14 +277,23 @@
 }
 
 input:user-invalid {
-  border: 2px solid var(--input-error);
+  border: vw(2px) solid var(--input-error);
   outline: none;
+
+  @include HD {
+      border-width: vwh(2px);
+  }
+  @include Tablet {
+    border-width: vwt(2px);
+
+  }
+  @include Mobile {
+    border-width: vwm(2px);
+  }
 }
 
 .label__checkbox {
   display: flex;
-  font-size: 14px;
-  line-height: 150%;
   color: var(--text-icon-gray-dark);
   text-align: center;
   -webkit-user-select: none;
@@ -150,18 +301,40 @@ input:user-invalid {
   user-select: none;
   align-items: center;
   cursor: pointer;
-  font-family: Raleway;
-  font-weight: 400;
+
+  span:last-child {
+    font-family: Raleway;
+
+    @include t3
+  }
 }
 
 .checkbox-icon {
-  width: 24px;
-  height: 24px;
-  //background-image: url('../assets/images/footer/check.svg');
+  width: vw(24px);
+  height: vw(24px);
   background-image: url('assets/images/footer/check.svg');
   background-size: contain;
-  margin-right: 8px;
+  margin-right: vw(8px);
   flex-shrink: 0;
+
+  @include HD {
+    width: vwh(24px);
+    height: vwh(24px);
+    margin-right: vwh(8px);
+
+  }
+  @include Tablet {
+    width: vwt(24px);
+    height: vwt(24px);
+    margin-right: vwt(8px);
+
+  }
+  @include Mobile {
+    width: vwm(24px);
+    height: vwm(24px);
+    margin-right: vwm(8px);
+
+  }
 }
 
 .checkbox,
@@ -179,81 +352,4 @@ input:user-invalid {
 
 .active:hover {
   background-image: url('assets/images/footer/check-active_hover.svg');
-}
-
-
-@media(min-width: 768px) {
-  .footer {
-    &__bg {
-      //background-image: url('assets/images/footer/footer-main-tablet.svg');
-    }
-
-    &__links {
-      display: flex;
-    }
-  }
-
-  .form__inputs {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form {
-    &__btns {
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-    }
-
-    &__btns button {
-      width: 164px;
-    }
-  }
-  .social__links {
-    justify-content: flex-start;
-  }
-}
-
-@media(min-width: 1024px) {
-  .footer {
-    //padding: 160px 0;
-    //&__container {
-    //  padding: 160px 45px;
-    //}
-
-    &__bg {
-      //background-image: url('assets/images/footer/footer-main-desctop.svg');
-      //width: 100%;
-      //max-width: 1276px;
-      //padding: 60px;
-      //margin: 0 auto;
-    }
-  }
-}
-
-@media(min-width: 1280px) {
-  .footer {
-    &__bg {
-      //display: grid;
-      //grid-template-columns: 4fr 7fr;
-      //column-gap: 48px;
-      //row-gap: 60px;
-    }
-
-    &__head {
-      margin-bottom: 24px;
-    }
-
-    &__form {
-      max-height: 264px;
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
-      padding: 40px;
-    }
-  }
-}
-
-@media(min-width: 1440px) {
-  .footer__bg {
-    //background-image: url('assets/images/footer/footer-main-full.svg');
-    //max-width: 1420px;
-  }
 }
