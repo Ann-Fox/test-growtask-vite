@@ -3,7 +3,7 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 // Меню бургер
 const menuButton = document.querySelector('.dropbtn')
@@ -13,8 +13,9 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+//Swiper
 new Swiper(".mySwiper", {
-    modules: [Navigation],
+    modules: [Navigation, Pagination],
     cssMode: true,
     navigation: {
         nextEl: ".next-Btn",
@@ -22,6 +23,28 @@ new Swiper(".mySwiper", {
     },
     mousewheel: true,
     keyboard: true,
+    allowTouchMove: true,
+    // simulateTouch: true,
+    breakpoints: {
+        0: {
+            spaceBetween: 20,
+            slidesPerView: 1.2,
+        },
+        577: {
+            spaceBetween: 20,
+            slidesPerView: 2.6,
+        },
+        991: {
+            spaceBetween: 20,
+            slidesPerView: 4,
+        },
+        1401: {
+            spaceBetween: 20,
+            slidesPerView: 4,
+        },
+    },
+
+
     // breakpoints: {}
 });
 

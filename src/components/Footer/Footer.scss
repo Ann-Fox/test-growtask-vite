@@ -133,23 +133,23 @@
   }
 }
 //правильно будет сделать через тег <svg></svg> и менять размер в vw
-a > img {
-  width: vw(24px);
-  height: vw(21px);
-
-  @include HD {
-    width: vwh(24px);
-    height: vwh(21px);
-  }
-  @include Tablet {
-    width: vwt(24px);
-    height: vwt(21px);
-  }
-  @include Mobile {
-    width: vwm(24px);
-    height: vwm(21px);
-  }
-}
+//a > img {
+//  width: vw(24px);
+//  height: vw(21px);
+//
+//  @include HD {
+//    width: vwh(24px);
+//    height: vwh(21px);
+//  }
+//  @include Tablet {
+//    width: vwt(24px);
+//    height: vwt(21px);
+//  }
+//  @include Mobile {
+//    width: vwm(24px);
+//    height: vwm(21px);
+//  }
+//}
 
 .form {
   &__inputs {
